@@ -122,3 +122,19 @@ CAN bus物理层已经有一个通过CAN-ID实现的优先级，基于物理层�
 - [nunavut DSDL编译器](https://github.com/OpenCyphal/nunavut)
 - [Yukon Cyphal总线可视化调试器](https://github.com/OpenCyphal/yukon)
 - [Libcanard 嵌入式协议栈](https://github.com/OpenCyphal/libcanard)
+
+## Cyphal V1 与 UAVCAN V0 不兼容
+
+Cyphal 在传输层上使用了不同的CAN-ID结构，对于UAVCAN V0的数据流，Cyphal无法正确解析帧信息，反之同理。
+
+- UAVCAN V0 CAN-ID结构
+    ![UAVCAN V0 CAN-ID结构](./UAVCAN_V0_CAN_ID.png)
+- Cyphal V1 CAN-ID结构
+    ![Cyphal V1 CAN-ID结构](./Cyphal_V1_CAN_ID.png)
+
+另外Cyphal V1与UAVCAN V0使用了相同的尾字节，因此可能存在异常情况使得双方的流控过程能够通过的情况。
+
+- UAVCAN V0 负载结构
+    ![UAVCAN V0 尾字节结构](./UAVCAN_V0_CAN_PAYLOAD.png)
+- Cyphal V1 尾字节结构
+    ![Cyphal V1 尾字节结构](./Cyphal_V1_CAN_TAIL_BYTE.png)
