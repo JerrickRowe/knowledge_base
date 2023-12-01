@@ -1,0 +1,13 @@
+{
+	"idf.adapterTargetName": "esp32s3",
+	"idf.portWin": "COM5",
+	"idf.flashType": "UART",
+	"editor.formatOnSave": true,
+	"editor.formatOnSaveMode": "file",
+	"markdown.extension.tableFormatter.enabled": true,
+	"json.format.enable": true,
+	"C_Cpp.clang_format_fallbackStyle": "LLVM",
+	"C_Cpp.errorSquiggles": "disabled",
+	"C_Cpp.autoAddFileAssociations": false,
+	"markdown-pdf.outputDirectory": "./docs"
+}
