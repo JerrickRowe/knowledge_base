@@ -19,7 +19,7 @@ UAVCAN维护团队2022年决定将UAVCAN更名为OpenCyphal, 目的是扩展协�
 
 在一个Cyphal总线中，并行连接了多个通信对象，每个通信对象都是一个节点。
 
-每个节点有一个唯一的节点ID(Node-ID)
+每个节点分配有一个总线内唯一的节点ID(Node-ID)
 
 节点ID范围：[0~127]
 
@@ -43,11 +43,11 @@ UAVCAN维护团队2022年决定将UAVCAN更名为OpenCyphal, 目的是扩展协�
 
 一个主题有一个唯一的(Subject-ID)主题ID，订阅者通过主题ID订阅相应的主题；
 
-| 管制情况                         | 固定/可变 | 主题ID      |
+| 规定情况                         | 固定/可变 | 主题ID      |
 | -------------------------------- | --------- | ----------- |
-| Unregulated无管制                | 固定+可变 | [0,6143]    |
-| Regulated Vendor受管制的厂商ID   | 固定      | [6144,7167] |
-| Regulated Standard受管制的标准ID | 固定      | [7168,8191] |
+| Unregulated无规定                | 固定+可变 | [0,6143]    |
+| Regulated Vendor已规定的厂商ID   | 固定      | [6144,7167] |
+| Regulated Standard已规定的标准ID | 固定      | [7168,8191] |
 
 ### Service服务
 
@@ -59,16 +59,21 @@ UAVCAN维护团队2022年决定将UAVCAN更名为OpenCyphal, 目的是扩展协�
 
 一个服务有一个唯一的(Service-ID)服务ID。
 
-| 管制情况                         | 固定/可变 | 服务ID    |
+| 规定情况                         | 固定/可变 | 服务ID    |
 | -------------------------------- | --------- | --------- |
-| Unregulated无管制                | 固定+可变 | [0~255]   |
-| Regulated Vendor受管制的厂商ID   | 固定      | [256,383] |
-| Regulated Standard受管制的标准ID | 固定      | [384,511] |
+| Unregulated无规定                | 固定+可变 | [0~255]   |
+| Regulated Vendor已规定的厂商ID   | 固定      | [256,383] |
+| Regulated Standard已规定的标准ID | 固定      | [384,511] |
 
-### Port
+### Port端口
 
-端口是一个抽象描述，用于统称消息和服务。主题ID和服务ID统称为(Port-ID)端口ID
-有关
+端口是一个抽象描述，用于统称消息和服务。主题ID和服务ID统称为(Port-ID)端口ID。
+
+### Regulation规定
+
+Cyphal官方维护有一个端口ID分配表，此处翻译为“规定”，详见：[public_regulated_data_types](https://github.com/OpenCyphal/public_regulated_data_types);
+
+分配表由一个dsdl文件树构成，uavcan目录下是标准ID，reg目录下是厂商ID。
 
 ### Data type 数据类型
 
