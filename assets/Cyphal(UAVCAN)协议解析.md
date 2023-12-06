@@ -3,17 +3,21 @@
 
 - @ [Jerrick.Rowe](https://github.com/JerrickRowe) (20231129)
 
+## UAVCAN、DroneCAN、Cyphal的历史
+
+[原UAVCAN V0协议](https://legacy.uavcan.org/)已经归档停止支持；
+
+对于UAVCAN V1版本的发展方向，协议维护团队存在分歧，于2022年分支为两个发展方向，分别是走通用化路线的的[OpenCyphal](https://opencyphal.org/)，和兼容原UAVCAN V0的[DroneCAN](https://dronecan.github.io/)；
+
+[DroneCAN社区关于Cyphal分歧的讨论](https://discuss.ardupilot.org/t/discussion-of-cyphal-support/98016)
+
+## Cyphal协议语意解释
+
 [Cyphal_Specification-UAVCAN-协议文档原文](./Cyphal_Specification-UAVCAN-协议文档.pdf)
 
 Cyphal是基于UAVCAN演变而来的开源通信协议，具有MIT开源许可；
 
 协议设计思想：去中心的PUB/SUB（订阅/发布）机制为主，Service/Request（服务/请求）机制为辅;
-
-UAVCAN维护团队2022年决定将UAVCAN更名为OpenCyphal, 目的是扩展协议的适用领域到无人机之外。
-
-[Cyphal主页](https://opencyphal.org/)
-
-## 协议语意解释
 
 ### Node节点
 
